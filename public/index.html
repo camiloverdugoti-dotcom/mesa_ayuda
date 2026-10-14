@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesa de Ayuda</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Soporte interno</p>
+          <h1>Mesa de Ayuda</h1>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel form-panel">
+          <h2>Registrar caso</h2>
+          <form id="caseForm">
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="department">Departamento</label>
+                <select id="department" name="department" required>
+                  <option value="">Selecciona un departamento</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="priority">Prioridad</label>
+                <select id="priority" name="priority">
+                  <option value="baja">Baja</option>
+                  <option value="media" selected>Media</option>
+                  <option value="alta">Alta</option>
+                  <option value="critica">Crítica</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="case_type">Tipo de caso</label>
+              <select id="case_type" name="case_type" required>
+                <option value="">Selecciona un tipo de caso</option>
+                <option value="equipo_no_enciende">Equipo no enciende</option>
+                <option value="impresora_no_enciende">Impresora no enciende</option>
+                <option value="reimpresion_de_facturas">Reimpresión de facturas</option>
+                <option value="dano_en_cableado">Daño en cableado</option>
+                <option value="sin_servicio_de_internet">Sin servicio de internet</option>
+                <option value="soporte_en_correo">Soporte en correo</option>
+              </select>
+            </div>
+
+            <div id="causeFields" class="cause-fields hidden"></div>
+
+            <div class="field">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+
+            <div class="field">
+              <label for="description">Descripción del caso</label>
+              <textarea id="description" name="description" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn">Enviar caso</button>
+          </form>
+          <div id="message" class="message hidden"></div>
+        </section>
+
+        <aside class="panel summary-panel">
+          <h2>Casos recientes</h2>
+          <ul id="recentCases" class="cases-list"></ul>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
